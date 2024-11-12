@@ -10,19 +10,21 @@ This project listens to Nostr events and processes them.
    npm install
    ```
 
-2. Set up the database:
+2. Rename `sample.env` to `.env` and update the configuration values
+
+3. Set up the database:
 
    ```bash
    npx prisma db push
    ```
 
-3. Generate Prisma client:
+4. Generate Prisma client:
 
    ```bash
    npx prisma generate
    ```
 
-4. Run the event listener:
+5. Run the event listener:
    ```bash
    node listenToEvents.js
    ```
