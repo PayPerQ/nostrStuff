@@ -1,0 +1,26 @@
+{
+  "name": "mute-user-listener",
+  "version": "1.0.0",
+  "description": "mute-user-listener",
+  "main": "main.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@nostr-dev-kit/ndk": "^2.10.0",
+    "@prisma/client": "^5.18.0",
+    "axios": "^1.7.5",
+    "dotenv": "^16.4.5",
+    "light-bolt11-decoder": "^3.1.1",
+    "nostr-fetch": "^0.15.1",
+    "nostr-tools": "^2.10.1",
+    "prisma": "^5.18.0",
+    "uuidv4": "^6.2.13",
+    "websocket-polyfill": "^0.0.3",
+    "ws": "^8.17.1"
+  }
+}
