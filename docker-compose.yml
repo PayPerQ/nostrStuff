@@ -1,0 +1,34 @@
+version: "3.8"
+
+services:
+  app:
+    build: .
+    ports:
+      - "3000:3000"
+    environment:
+      - POSTGRES_PRISMA_URL=postgresql://postgres:yourpassword@db:5432/postgres
+      - DIRECT_URL=postgresql://postgres:yourpassword@db:5432/postgres
+      - NOTE_TO_MONITOR_LIST_EVENT_IDS=${NOTE_TO_MONITOR_LIST_EVENT_IDS}
+      - NOSTR_USER_NPUB=${NOSTR_USER_NPUB}
+      - NOSTR_USER_NSEC=${NOSTR_USER_NSEC}
+    env_file:
+      - .env
+    depends_on:
+      - db
+    volumes:
+      - .:/app
+      - /app/node_modules
+
+  db:
+    image: postgres:15
+    ports:
+      - "5432:5432"
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=yourpassword
+      - POSTGRES_DB=postgres
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+volumes:
+  postgres_data:
